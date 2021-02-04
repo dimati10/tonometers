@@ -1,0 +1,97 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+a {
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+img {
+	display: block;
+}
+body {
+    color: #000;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.container {
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.button {
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: $main;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    &:hover { 
+        background-color: #e42525;
+    }
+}
+.flare {
+    position: relative;
+    overflow: hidden;
+    &::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60px;
+		height: 100%;
+		background-color: #fff;
+		filter: blur(40px);
+		transform: translateX(-200px) skewX(-45deg);
+		animation: flare 3s infinite linear;
+	}
+}
+@keyframes flare {
+	90% {
+		transform: translateX(-200px) skewX(-45deg);
+	}
+	100% {
+		transform: translateX(500px) skewX(-45deg);
+	}
+}
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    input {
+        height: 50px;
+        margin-bottom: 15px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #4b4b4b;
+        font-size: 14px;
+        font-weight: 300;
+        &::placeholder {
+            color: #4b4b4b;
+        }
+    }
+    &__button {
+        margin-top: 5px;
+        padding: 18px 20px;
+    }
+}
